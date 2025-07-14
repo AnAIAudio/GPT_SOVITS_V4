@@ -1800,7 +1800,7 @@ with gr.Blocks(title="GPT-SoVITS WebUI", analytics_enabled=False, js=js, css=css
                                 )
                                 total_epoch1Bb = gr.Slider(
                                     minimum=2,
-                                    maximum=50,
+                                    maximum=500,
                                     step=1,
                                     label=i18n("总训练轮数total_epoch"),
                                     value=15,
@@ -1809,7 +1809,7 @@ with gr.Blocks(title="GPT-SoVITS WebUI", analytics_enabled=False, js=js, css=css
                             with gr.Row():
                                 save_every_epoch1Bb = gr.Slider(
                                     minimum=1,
-                                    maximum=50,
+                                    maximum=500,
                                     step=1,
                                     label=i18n("保存频率save_every_epoch"),
                                     value=5,
@@ -1981,5 +1981,6 @@ with gr.Blocks(title="GPT-SoVITS WebUI", analytics_enabled=False, js=js, css=css
         inbrowser=True,
         share=is_share,
         server_port=webui_port_main,
+        root_path="/sovits/pretrain",
         # quiet=True,
     )

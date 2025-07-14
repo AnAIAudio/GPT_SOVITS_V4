@@ -422,4 +422,5 @@ if __name__ == "__main__":
         # quiet=True,
         share=eval(args.is_share),
         server_port=int(args.webui_port_subfix),
+        root_path="/sovits/subfix",
     )
