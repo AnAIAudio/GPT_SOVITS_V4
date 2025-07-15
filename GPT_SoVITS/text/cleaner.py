@@ -20,7 +20,7 @@ special = [
 
 def clean_text(text, language, version=None):
     if version is None:
-        version = os.environ.get("version", "v2")
+        version = os.environ.get("version", "v4")
     if version == "v1":
         symbols = symbols_v1.symbols
         language_module_map = {"zh": "chinese", "ja": "japanese", "en": "english"}
@@ -57,7 +57,7 @@ def clean_text(text, language, version=None):
 
 def clean_special(text, language, special_s, target_symbol, version=None):
     if version is None:
-        version = os.environ.get("version", "v2")
+        version = os.environ.get("version", "v4")
     if version == "v1":
         symbols = symbols_v1.symbols
         language_module_map = {"zh": "chinese", "ja": "japanese", "en": "english"}

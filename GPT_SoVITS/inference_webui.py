@@ -29,7 +29,7 @@ logging.getLogger("torchaudio._extension").setLevel(logging.ERROR)
 logging.getLogger("multipart.multipart").setLevel(logging.ERROR)
 warnings.simplefilter(action="ignore", category=FutureWarning)
 
-version = model_version = os.environ.get("version", "v2")
+version = model_version = os.environ.get("version", "v4")
 
 from config import change_choices, get_weights_names, name2gpt_path, name2sovits_path
 

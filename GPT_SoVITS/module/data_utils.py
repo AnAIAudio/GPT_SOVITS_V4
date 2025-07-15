@@ -10,7 +10,7 @@ from text import cleaned_text_to_sequence
 import torch.nn.functional as F
 from tools.my_utils import load_audio
 
-version = os.environ.get("version", None)
+version = os.environ.get("version", "v4")
 
 
 # ZeroDivisionError fixed by Tybost (https://github.com/RVC-Boss/GPT-SoVITS/issues/79)

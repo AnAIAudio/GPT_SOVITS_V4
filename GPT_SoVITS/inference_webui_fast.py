@@ -41,7 +41,7 @@ gpt_path = os.environ.get("gpt_path", None)
 sovits_path = os.environ.get("sovits_path", None)
 cnhubert_base_path = os.environ.get("cnhubert_base_path", None)
 bert_path = os.environ.get("bert_path", None)
-version = model_version = os.environ.get("version", "v2")
+version = model_version = os.environ.get("version", "v4")
 
 import gradio as gr
 from TTS_infer_pack.text_segmentation_method import get_method
