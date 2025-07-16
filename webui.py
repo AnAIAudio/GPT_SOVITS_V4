@@ -1322,6 +1322,20 @@ def sync(text):
     return {"__type__": "update", "value": text}
 
 
+UPLOAD_DIR = "."
+
+def save_uploaded_file(file):
+    filename = os.path.basename(file)
+    save_path = os.path.join(UPLOAD_DIR, filename)
+
+    if os.path.exists(save_path):
+        print(f"파일이 이미 존재합니다. 저장하지 않습니다: {save_path}")
+        return None
+    shutil.copy2(file, save_path)
+
+    return save_path
+
+
 with gr.Blocks(title="GPT-SoVITS WebUI", analytics_enabled=False, js=js, css=css) as app:
     gr.HTML(
         top_html.format(
@@ -1354,6 +1368,12 @@ with gr.Blocks(title="GPT-SoVITS WebUI", analytics_enabled=False, js=js, css=css
                                 file_types=[".wav", ".mp3"],
                                 type="filepath"
                             )
+                            slice_inp_path.change(
+                                fn=save_uploaded_file,
+                                inputs=[slice_inp_path],
+                                outputs=[]
+                            )
+
                             slice_opt_root = gr.Textbox(
                                 label=i18n("切分后的子音频的输出根目录"), value="output/slicer_opt"
                             )
