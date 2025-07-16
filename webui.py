@@ -1333,7 +1333,11 @@ with gr.Blocks(title="GPT-SoVITS WebUI", analytics_enabled=False, js=js, css=css
                 with gr.Row():
                     with gr.Column(scale=3):
                         with gr.Row():
-                            slice_inp_path = gr.Textbox(label=i18n("音频自动切分输入路径，可文件可文件夹"), value="")
+                            slice_inp_path = gr.File(
+                                label=i18n("音频自动切分输入路径，可文件可文件夹"),
+                                file_types=[".wav", ".mp3"],
+                                type="filepath"
+                            )
                             slice_opt_root = gr.Textbox(
                                 label=i18n("切分后的子音频的输出根目录"), value="output/slicer_opt"
                             )
