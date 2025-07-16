@@ -289,7 +289,7 @@ def change_gpt_weights(gpt_path):
     tts_pipeline.init_t2s_weights(gpt_path)
 
 
-with gr.Blocks(title="GPT-SoVITS WebUI", analytics_enabled=False, js=js, css=css) as app:
+with gr.Blocks(title="Inference-GPT-SoVITS", analytics_enabled=False, js=js, css=css) as app:
     gr.HTML(
         top_html.format(
             i18n("本软件以MIT协议开源, 作者不对软件具备任何控制力, 使用软件者、传播软件导出的声音者自负全责.")

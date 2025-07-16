@@ -308,7 +308,7 @@ if __name__ == "__main__":
 
     set_global(args.load_json, args.load_list, args.json_key_text, args.json_key_path, args.g_batch)
 
-    with gr.Blocks(analytics_enabled=False) as demo:
+    with gr.Blocks(title="Subfix-GPT-SoVITS", analytics_enabled=False) as demo:
         gr.Markdown(
             value=i18n(
                 "Submit Text: 将当前页所有文本框内容手工保存到内存和文件(翻页前后或者退出标注页面前如果没点这个按钮，你再翻回来就回滚了，白忙活。)"
