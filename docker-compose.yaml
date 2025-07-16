@@ -57,6 +57,8 @@ services:
     shm_size: "16g"
     restart: unless-stopped
     runtime: nvidia
+    command: python webui.py --share
+
   GPT-SoVITS-CU128-Lite:
     image: xxxxrt666/gpt-sovits:latest-cu128-lite
     container_name: GPT-SoVITS-CU128-Lite
